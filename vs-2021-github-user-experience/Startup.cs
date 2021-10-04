@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace vs_2021_github_user_experience
 {
@@ -49,7 +50,10 @@ namespace vs_2021_github_user_experience
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("Hello first change");
+                });
             });
         }
     }
