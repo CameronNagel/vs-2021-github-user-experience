@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
@@ -52,7 +53,7 @@ namespace vs_2021_github_user_experience
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello first change");
+                    await context.Response.WriteAsync("<h1>Hello first change<h1/>");
                 });
             });
         }
